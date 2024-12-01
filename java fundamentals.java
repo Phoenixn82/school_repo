@@ -3509,3 +3509,150 @@ public class MostPopularOS {
 // Enter N (1-8): 
 // 6
 // The 6th most popular OS is Linux
+
+
+
+
+// ArrayLists with loops.
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ArrayListAverage {
+   public static void main(String[] args) {
+      final int NUM_ELEMENTS = 8;
+      Scanner scnr = new Scanner(System.in);
+      ArrayList<Double> userNums = new ArrayList<Double>(); // User numbers
+      Double sumVal;
+      Double averageVal; 
+      int i; 
+      
+      // Get user numbers and add to userNums
+      System.out.println("Enter " + NUM_ELEMENTS + " numbers...");
+      for (i = 0; i < NUM_ELEMENTS; ++i) {
+         System.out.print("Number " + (i + 1) + ": ");
+         userNums.add(scnr.nextDouble());
+      }
+      
+      // Determine average value
+      sumVal = 0.0;
+      for (i = 0; i < userNums.size(); ++i) {
+         sumVal = sumVal + userNums.get(i); // Calculate sum of all numbers
+      }
+      averageVal = sumVal / userNums.size(); // Calculate average 
+      
+      System.out.println("Average: " + averageVal);
+   }
+}
+
+// Output
+
+
+
+// Enter 8 numbers...
+// Number 1: 1.2
+// Number 2: 3.3
+// Number 3: 5.5
+// Number 4: 2.4
+// Number 5: 3.14
+// Number 6: 3.0
+// Number 7: 5.3
+// Number 8: 3.1
+// Average: 3.3675
+
+
+
+import java.util.Scanner;
+
+public class Team {
+   
+   private String name;
+   private int wins;
+   private int losses;
+   
+   // Mutator methods
+   public void setName(String name) {
+      this.name = name;
+   }
+   
+   public void setWins(int wins) {
+      this.wins = wins;
+   }
+   
+   public void setLosses(int losses) {
+      this.losses = losses; 
+   }
+   
+   // Accessor methods
+   public String getName() {
+      return name;
+   }
+   
+   public int getWins() {  
+      return wins;
+   }
+   
+   public int getLosses() {
+      return losses;
+   }
+
+   // Calculate win percentage
+   public double getWinPercentage() {
+      if (wins + losses == 0) {
+         return 0.0;
+      }
+      return (double) wins / (wins + losses);
+   }
+   
+   // Print standing based on win percentage
+   public void printStanding() {
+      double winPercentage = getWinPercentage();
+      
+      System.out.printf("Win percentage: %.2f%n", winPercentage);
+      
+      if (winPercentage > 0.5) {
+         System.out.println("Congratulations, Team " + name + " has a winning average!");
+      } else {
+         System.out.println("Team " + name + " has a losing average.");
+      }
+   }
+}
+
+
+// CASTING
+
+// Casting in Java is the process of converting one data type into another. 
+// Java supports two types of casting:
+
+// 1. Primitive Type Casting
+
+// Implicit (Widening) Casting: Automatically done when converting a smaller data type to a larger one.
+// Example: int to long, float to double.
+int num = 100;
+long bigNum = num;  // Implicit casting
+
+// Explicit (Narrowing) Casting: Must be done manually when converting a larger data type to a smaller one.
+// Example: double to int.
+double pi = 3.14;
+int intPi = (int) pi;  // Explicit casting, results in 3
+
+// 2. Reference Type Casting
+
+// Used when dealing with objects. It allows converting one object type to another within an inheritance hierarchy.
+
+// Upcasting (Implicit): Converts a subclass type to a superclass type.
+Dog dog = new Dog();
+Animal animal = dog;  // Upcasting
+
+// Downcasting (Explicit): Converts a superclass type to a subclass type. Must be done manually.
+Animal anotherAnimal = new Dog();
+Dog anotherDog = (Dog) anotherAnimal;  // Downcasting
+
+// Important Notes:
+// Downcasting requires a check with instanceof to avoid ClassCastException.
+if (animal instanceof Dog) {
+    Dog checkedDog = (Dog) animal;
+}
+
+// Casting does not change the actual object or value, just how it's referenced or stored.
+
+

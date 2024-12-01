@@ -77,3 +77,13 @@ Integer.valueOf("2001") // Returns Integer object with value 2001
 Integer.toBinaryString(num1)       // Returns "1010"
 Integer.toBinaryString(regularInt) // Returns "10100"
 Integer.toBinaryString(7)          // Return "111"
+
+
+   
+// CASTING 
+   public double getWinPercentage() {
+      if (wins + losses == 0) {
+         return 0.0;
+      }
+      return (double) wins / (wins + losses); // the (double) is a casting thing, 
+   }
