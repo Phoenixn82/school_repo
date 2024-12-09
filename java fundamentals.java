@@ -3656,3 +3656,59 @@ if (animal instanceof Dog) {
 // Casting does not change the actual object or value, just how it's referenced or stored.
 
 
+
+
+
+import java.util.Random;
+
+public class ThreeRandomValues {
+   public static void main(String[] args) {
+      Random randGen = new Random();  // New random number generator
+
+      System.out.println(randGen.nextInt());
+      System.out.println(randGen.nextInt());
+      System.out.println(randGen.nextInt());
+   }
+}
+
+// output 
+// 959650663
+// 324135575
+// 1735989143
+
+
+// A programmer wants random integers in the range 10 to 15. The number of possible values is 15 − 10 + 1. (People often forget the + 1.)
+// randGen.nextInt(6) generates 6 possible values as desired, but with range 0 to 5.
+// Adding 10 still generates 6 values, but now those values start at 10. The range thus becomes 10 to 15.
+
+randGen(6) = 0 - 5
+
+randGen(6) + 10 = 10 - 15
+
+
+
+
+//seed
+
+import java.util.Random;
+
+public class SeededRandomValues {
+   public static void main(String[] args) {
+      Random randGen = new Random(15);  // Seed with 15
+
+      System.out.println(randGen.nextInt());
+      System.out.println(randGen.nextInt());
+      System.out.println(randGen.nextInt());
+   }
+}
+
+// Random() seeds the pseudo-random number generator with a number based on the current time. 
+// Since, the time is different for each program run, the program will get a unique sequence.
+
+
+
+
+// Complete the code to generate a random integer between 4 and 22 (inclusive).
+Expected: randGen.nextInt(19) + 4;
+
+// The passed number is the range size, so 22 - 4 + 1 = 19, which yields 0 to 18. That range is shifted by 4 to yield 4 to 22.

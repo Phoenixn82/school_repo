@@ -87,3 +87,10 @@ Integer.toBinaryString(7)          // Return "111"
       }
       return (double) wins / (wins + losses); // the (double) is a casting thing, 
    }
+
+
+   
+   // Complete the code to generate a random integer between 4 and 22 (inclusive).
+Expected: randGen.nextInt(19) + 4;
+
+// The passed number is the range size, so 22 - 4 + 1 = 19, which yields 0 to 18. That range is shifted by 4 to yield 4 to 22.
